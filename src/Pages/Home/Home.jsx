@@ -1,4 +1,5 @@
 import Banner from "../../Components/Banner.jsx/Banner"
+import CardSection from "../CardSection/CardSection"
 
 
 function Home() {
@@ -6,6 +7,8 @@ function Home() {
     <div>
 
       <Banner></Banner>
+      <CardSection></CardSection>
+ 
     </div>
   )
 }

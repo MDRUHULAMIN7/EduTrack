@@ -119,7 +119,7 @@ function Banner() {
           </button>
         </div>
       </div>
-      <div className="mt-12 grid grid-cols-4 gap-6 px-4 py-8 max-w-screen-lg mx-auto">
+      <div className="mt-12 grid md:grid-cols-4 grid-cols-2 gap-6 px-4 py-8 max-w-screen-lg mx-auto">
         <div className="flex flex-col items-center bg-white shadow-md rounded-md p-6">
           <h4 className="text-lg font-bold text-[#001f4f]">40 Courses</h4>
         </div>
