@@ -1,8 +1,12 @@
+import Banner from "../../Components/Banner.jsx/Banner"
 
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+
+      <Banner></Banner>
+    </div>
   )
 }
 

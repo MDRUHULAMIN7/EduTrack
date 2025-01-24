@@ -3,6 +3,7 @@ import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home";
 import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SinIn/SignIn";
+import CollegeDetails from "../Components/CollegeDetails/CollegeDetails";
 export const router = createBrowserRouter([
 {
     path:"/",
@@ -20,7 +21,11 @@ export const router = createBrowserRouter([
         {
             path:"/signin",
             element:<SignIn></SignIn>
-        }
+        },
+        {
+            path:"/college/:id",
+            element:<CollegeDetails></CollegeDetails>
+        },
     ]
 }
 
