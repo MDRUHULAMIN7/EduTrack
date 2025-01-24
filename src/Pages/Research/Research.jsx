@@ -70,11 +70,11 @@ export const Research = () => {
       {selectedPaper && (
         <div
           className="fixed inset-0 flex items-center justify-center  backdrop-blur-sm z-50 "
-          onClick={handleCloseModal} // Close modal on background click
+          onClick={handleCloseModal} 
         >
           <div
             className="bg-white pt-8 pb-6 px-6 rounded-lg shadow-lg max-w-md w-full relative"
-            onClick={(e) => e.stopPropagation()} // Prevent click from closing the modal
+            onClick={(e) => e.stopPropagation()} 
           >
             <button
               onClick={handleCloseModal}

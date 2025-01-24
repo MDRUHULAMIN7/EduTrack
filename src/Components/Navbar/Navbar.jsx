@@ -39,7 +39,7 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Navigation Links (Desktop) */}
+         
           <ul className="hidden md:flex space-x-6 text-sm font-semibold text-[#002147]">
             <li>
               <NavLink
@@ -73,7 +73,7 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/courses"
+                to="/colleges"
                 className={({ isActive }) =>
                   isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
                 }
@@ -107,7 +107,7 @@ function Navbar() {
                   alt="User"
                 />
                 {dropdownOpen && (
-                  <div className="absolute right-0 top-8 w-48 bg-white shadow-lg rounded-md">
+                  <div className="absolute right-8 top-8 z-50  w-48 bg-white shadow-lg rounded-md">
                     <Link
                       to="/profile"
                       className="block px-4 py-2 text-sm text-[#002147] hover:bg-[#6b9080] hover:rounded-md hover:text-white"

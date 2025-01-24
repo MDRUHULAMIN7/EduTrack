@@ -62,7 +62,7 @@ function Banner() {
           {showModal && (
             <div
               ref={modalRef} 
-              className="absolute top-12 left-0 w-full max-h-64 bg-white shadow-lg rounded-md z-50 overflow-y-auto"
+              className="absolute top-12 left-0 w-full max-h-64 bg-white shadow-lg rounded-md z-30 overflow-y-auto"
               style={{
                 scrollbarWidth: "thin",
                 msOverflowStyle: "auto",
