@@ -10,12 +10,12 @@ const CardSection = () => {
     const fetchCollegesDetails = async () => {
       try {
         const response = await axiosPublic.get(`/colleges-6`);
-        setColleges(response.data); // Store the API response data
+        setColleges(response.data);
         console.log("API Response:", response.data);
       } catch (err) {
         console.error("API Error:", err);
       } finally {
-        setLoading(false); // Stop the loading state
+        setLoading(false); 
       }
     };
 
@@ -38,7 +38,7 @@ const CardSection = () => {
             <img
               src={college.image}
               alt={college.name}
-              className="w-full h-40 object-cover rounded-md mb-4"
+              className="w-full h-48 object-cover rounded-md mb-4"
             />
             <h3 className="text-xl font-semibold mb-2">{college.name}</h3>
             <p className="text-gray-600 mb-1">
