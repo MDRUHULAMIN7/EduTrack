@@ -19,8 +19,8 @@ function Navbar() {
         <div className="container mx-auto flex justify-between items-center px-4">
           <p>Contact: Nowhata, Rajshahi, Bangladesh</p>
           <div className="flex items-center space-x-4">
-            <FaFacebookF className="text-white hover:text-[#6b9080] cursor-pointer" />
-            <FaWhatsapp className="text-white hover:text-[#6b9080] cursor-pointer" />
+            <FaFacebookF className="text-white hover:text-[#3a9970] cursor-pointer" />
+            <FaWhatsapp className="text-white hover:text-[#3a9970] cursor-pointer" />
             <p>Phone: +88 01903001637</p>
           </div>
         </div>
@@ -33,7 +33,7 @@ function Navbar() {
             <img src="/logo.png" alt="Education Master Logo" className="h-10 sm:h-12" />
             <div>
               <h1 className="text-lg sm:text-2xl font-bold text-[#002147]">
-                EDU <span className="text-[#6b9080]">TRACK</span>
+                EDU <span className="text-[#3a9970]">TRACK</span>
               </h1>
               <p className="text-xs text-[#6c757d]">UNIVERSITY | COLLEGE</p>
             </div>
@@ -45,7 +45,7 @@ function Navbar() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                  isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                 }
               >
                 Home
@@ -55,7 +55,7 @@ function Navbar() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                  isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                 }
               >
                 About us
@@ -65,7 +65,7 @@ function Navbar() {
               <NavLink
                 to="/admisions"
                 className={({ isActive }) =>
-                  isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                  isActive ? "text-[#00e682]" : "hover:text-[#3a9970]"
                 }
               >
                 Admission
@@ -75,7 +75,7 @@ function Navbar() {
               <NavLink
                 to="/colleges"
                 className={({ isActive }) =>
-                  isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                  isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                 }
               >
                 Colleges
@@ -83,9 +83,9 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/contact"
+                to="/mycollege"
                 className={({ isActive }) =>
-                  isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                  isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                 }
               >
                 My College
@@ -103,19 +103,19 @@ function Navbar() {
               >
                 <img
                   src={user?.photoURL}
-                  className="h-8 w-8 border-2 rounded-full"
+                  className="h-10 w-10 border-2 border-[#6b9080] rounded-full"
                   alt="User"
                 />
                 {dropdownOpen && (
-                  <div className="absolute right-8 top-8 z-50  w-48 bg-white shadow-lg rounded-md">
+                  <div className="absolute right-6 top-6 z-50  w-48 bg-white shadow-lg rounded-md">
                     <Link
                       to="/profile"
-                      className="block px-4 py-2 text-sm text-[#002147] hover:bg-[#6b9080] hover:rounded-md hover:text-white"
+                      className="block px-4 py-2 text-sm text-[#002147] hover:bg-[#3a9970] hover:rounded-md hover:text-white"
                     >
                       Profile
                     </Link>
                     <button
-                      className="block w-full hover:rounded-md cursor-pointer text-left px-4 py-2 text-sm text-[#002147] hover:bg-[#6b9080] hover:text-white"
+                      className="block w-full hover:rounded-md cursor-pointer text-left px-4 py-2 text-sm text-[#002147] hover:bg-[#3a9970] hover:text-white"
                       onClick={() => (logout()
                         .then((res) => {
                           console.log(res);
@@ -135,7 +135,7 @@ function Navbar() {
             ) : (
               <Link
                 to="/signin"
-                className="bg-[#6b9080] text-white px-2 py-1 rounded-md hover:bg-blue-700"
+                className="bg-[#3a9970] text-white px-2 py-1 rounded-md hover:bg-blue-700"
               >
                 Sign In
               </Link>
@@ -161,7 +161,7 @@ function Navbar() {
                   to="/"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
-                    isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                    isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                   }
                 >
                   Home
@@ -172,7 +172,7 @@ function Navbar() {
                   to="/about"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
-                    isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                    isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                   }
                 >
                   About us
@@ -183,7 +183,7 @@ function Navbar() {
                   to="/admission"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
-                    isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                    isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                   }
                 >
                   Admission
@@ -194,7 +194,7 @@ function Navbar() {
                   to="/courses"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
-                    isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                    isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                   }
                 >
                   Colleges
@@ -205,7 +205,7 @@ function Navbar() {
                   to="/contact"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
-                    isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
+                    isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
                   }
                 >
                   My College
@@ -217,12 +217,12 @@ function Navbar() {
                     <Link
                       to="/profile"
                       onClick={() => setMenuOpen(false)}
-                      className="block  cursor-pointer py-2 text-sm text-[#002147] hover:text-[#6b9080] "
+                      className="block  cursor-pointer py-2 text-sm text-[#002147] hover:text-[#3a9970] "
                     >
                       Profile
                     </Link>
                     <button
-                      className="block w-full text-left  cursor-pointer py-2 text-sm text-[#002147] hover:text-[#6b9080] "
+                      className="block w-full text-left  cursor-pointer py-2 text-sm text-[#002147] hover:text-[#3a9970] "
                       onClick={() => (logout()
                         .then((res) => {
                           console.log(res);
@@ -240,7 +240,7 @@ function Navbar() {
                 ) : (
                   <Link
                     to="/signin"
-                    className="bg-[#6b9080] text-white px-4 py-1 rounded-md hover:bg-[#7fbda5]"
+                    className="bg-[#3a9970] text-white px-4 py-1 rounded-md hover:bg-[#7fbda5]"
                   >
                     Sign In
                   </Link>
