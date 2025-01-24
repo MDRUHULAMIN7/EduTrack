@@ -5,6 +5,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SinIn/SignIn";
 import CollegeDetails from "../Components/CollegeDetails/CollegeDetails";
 import Colleges from "../Pages/Colleges/Colleges";
+import Admission from "../Pages/Admission/Admission";
 export const router = createBrowserRouter([
 {
     path:"/",
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
         {
             path:"/colleges",
             element:<Colleges></Colleges>
+        },
+        {
+            path:"/admisions",
+            element:<Admission></Admission>
         },
     ]
 }

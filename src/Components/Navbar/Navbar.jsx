@@ -63,7 +63,7 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/admission"
+                to="/admisions"
                 className={({ isActive }) =>
                   isActive ? "text-[#6b9080]" : "hover:text-[#6b9080]"
                 }
