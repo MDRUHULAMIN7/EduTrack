@@ -8,11 +8,12 @@ import Colleges from "../Pages/Colleges/Colleges";
 import Admission from "../Pages/Admission/Admission";
 import PrivateRoute from "./PrivateRoute";
 import MyCollege from "../Pages/MyCollege/MyCollege";
+import NotFound from "../Components/NotFound/NotFound";
 export const router = createBrowserRouter([
 {
     path:"/",
     element:<Main></Main>,
-    errorElement:<h1>errorpage</h1>,
+    errorElement:<NotFound></NotFound>,
     children:[
         {
             path:"/",
