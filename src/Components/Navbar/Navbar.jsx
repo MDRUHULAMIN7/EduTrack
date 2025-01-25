@@ -109,7 +109,7 @@ function Navbar() {
                 {dropdownOpen && (
                   <div className="absolute right-6 top-6 z-50  w-48 bg-white shadow-lg rounded-md">
                     <Link
-                      to="/profile"
+                      to={`/profile/${user?.email}`}
                       className="block px-4 py-2 text-sm text-[#002147] hover:bg-[#3a9970] hover:rounded-md hover:text-white"
                     >
                       Profile
