@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { axiosPublic } from '../../Hooks/useAxiosPublic';
 import { toast } from 'react-toastify';  // Import the toast module
 import 'react-toastify/dist/ReactToastify.css';  // Import the required styles
+import UseAuth from '../../Hooks/UseAuth';
 
 const Admission = () => {
+  const {user}=UseAuth()
   const [selectedCollege, setSelectedCollege] = useState('');
   const [formData, setFormData] = useState({
     name: '',
@@ -24,11 +26,11 @@ const Admission = () => {
     setFormData({
       name: '',
       subject: '',
-      email: '',
+      email:user?.email ,
       phone: '',
       address: '',
       dob: '',
-      image: null,
+      image: imageUrl,
     });
     setSelectedCollege('');
     setImageUrl(null);
@@ -85,6 +87,7 @@ const Admission = () => {
    
     const dataToSubmit = {
       ...formData,
+      email: formData.email || user?.email,
       selectedCollege,
     };
 
@@ -118,7 +121,7 @@ setLoading(true);
   };
 
   return (
-    <div className="p-8  min-h-screen flex items-center justify-center">
+    <div className="p-8 h-[80vh]  flex items-center justify-center">
       {colleges && colleges.length ? <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl">
         <h1 className="text-3xl font-semibold text-center text-gray-800 mb-4">Admission Form</h1>
 
@@ -173,19 +176,7 @@ setLoading(true);
                 />
               </div>
 
-              <div>
-                <label htmlFor="email" className="text-gray-700">Your Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-2 bg-gray-100 rounded-lg shadow-md border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:outline-none"
-                />
-              </div>
+           
 
               <div>
                 <label htmlFor="phone" className="text-gray-700">Phone Number</label>
@@ -227,18 +218,19 @@ setLoading(true);
                   className="w-full p-2 bg-gray-100 rounded-lg shadow-md border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:outline-none"
                 />
               </div>
-            </div>
-
-            <div className="mb-4">
-              <h3 className="text-xl font-medium text-gray-700">Upload Your Image</h3>
+              
+            <div className="">
+              <h3 className=" text-gray-700">Upload Your Image</h3>
               <input
                 type="file"
                 name="image"
                 onChange={handleImageUpload}
-                className="w-full p-2 mt-2 bg-gray-100 rounded-lg shadow-md border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:outline-none"
+                className="w-full p-2 mt-1 bg-gray-100 rounded-lg shadow-md border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:outline-none"
               />
-              {imageUrl && <img src={imageUrl} alt="Uploaded" className="w-20 h-20 mt-2 rounded-full" />}
+           
             </div>
+            </div>
+
 
             <button
               type="submit"

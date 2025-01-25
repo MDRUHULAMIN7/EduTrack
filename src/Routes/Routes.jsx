@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
         },
         {
             path:"/college/:id",
-            element:<CollegeDetails></CollegeDetails>
+            element:<PrivateRoute><CollegeDetails></CollegeDetails></PrivateRoute>
         },
         {
             path:"/colleges",
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
         },
         {
             path:"/admisions",
-            element:<Admission></Admission>
+            element: <PrivateRoute><Admission></Admission></PrivateRoute>
         },
         {
             path:"/mycollege",
