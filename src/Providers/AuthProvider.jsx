@@ -39,12 +39,13 @@ const AuthProvider = ({ children }) => {
 
 
 
-  const updateuserprofile = (name, photo) => {
+  const updateuserprofile = (name, photo,email) => {
     setLoading(true);
 
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
+      email: email,
     })
       .then(async () => {
         setLoading(false);
