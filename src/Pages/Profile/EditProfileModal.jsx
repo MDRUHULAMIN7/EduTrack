@@ -16,10 +16,9 @@ const EditProfileModal = ({ user, onClose }) => {
   });
   const {updateuserprofile} = UseAuth();
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(""); // For showing error messages
-  const [successMessage, setSuccessMessage] = useState(""); // For showing success message
+  const [errorMessage, setErrorMessage] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState(""); 
 
-  // Handle input field changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -79,7 +78,7 @@ const EditProfileModal = ({ user, onClose }) => {
     }
   };
 
-  // Close modal when clicked outside
+
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -94,7 +93,7 @@ const EditProfileModal = ({ user, onClose }) => {
       <div className="modal-content bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 className="text-2xl font-semibold mb-4">Edit Profile</h2>
 
-        {/* Show success or error messages */}
+    
         {errorMessage && <div className="text-red-500 mb-4">{errorMessage}</div>}
         {successMessage && <div className="text-green-500 mb-4">{successMessage}</div>}
 
