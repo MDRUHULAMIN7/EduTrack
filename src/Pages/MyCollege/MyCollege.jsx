@@ -4,13 +4,15 @@ import { axiosPublic } from "../../Hooks/useAxiosPublic";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReviewModal from "./ReviewModal";
+import UseAuth from "../../Hooks/UseAuth";
 
 const MyCollege = () => {
+  const {user}=UseAuth()
   const [collegeData, setCollegeData] = useState([]);
   const [reviewData, setReviewData] = useState({});
   const [loading, setLoading] = useState(true);
   const [selectedCollege, setSelectedCollege] = useState(null);
-  const userEmail = "ruhulthisis@gmail.com";
+  const userEmail = user?.email ;
 
   useEffect(() => {
     const fetchColleges = async () => {
@@ -109,14 +111,23 @@ const MyCollege = () => {
                 <h3 className="text-lg cursor-pointer font-semibold text-gray-800">
                   Add a Review
                 </h3>
-                <textarea
-                  className="w-full p-2 mt-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500"
-                  placeholder="Write your review here"
-                  value={reviewData[college._id]?.review || ""}
-                  onChange={(e) =>
-                    handleReviewChange(college._id, "review", e.target.value)
-                  }
-                />
+             
+
+<textarea
+  className="w-full p-2 mt-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500"
+  placeholder="Write your review here in 100 words... "
+  maxLength={100}
+  value={reviewData[college._id]?.review || ""}
+  onChange={(e) => {
+    const inputValue = e.target.value;
+    if (inputValue.length > 100) {
+      toast.error("Your review cannot exceed 300 characters!");
+      return;
+    }
+    handleReviewChange(college._id, "review", inputValue);
+  }}
+/>;
+
                 <div className="flex items-center mt-4">
                   <span className="text-lg font-semibold mr-2">Rating:</span>
                   {[...Array(5)].map((_, index) => {
