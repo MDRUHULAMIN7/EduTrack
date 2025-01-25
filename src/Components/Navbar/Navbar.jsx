@@ -180,7 +180,7 @@ function Navbar() {
               </li>
               <li>
                 <NavLink
-                  to="/admission"
+                  to="/admisions"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
                     isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
@@ -191,7 +191,7 @@ function Navbar() {
               </li>
               <li>
                 <NavLink
-                  to="/courses"
+                  to="/colleges"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
                     isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
@@ -202,7 +202,7 @@ function Navbar() {
               </li>
               <li>
                 <NavLink
-                  to="/contact"
+                  to="/mycollege"
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
                     isActive ? "text-[#3a9970]" : "hover:text-[#3a9970]"
@@ -215,7 +215,7 @@ function Navbar() {
                 {user?.email ? (
                   <>
                     <Link
-                      to="/profile"
+                     to={`/profile/${user?.email}`}
                       onClick={() => setMenuOpen(false)}
                       className="block  cursor-pointer py-2 text-sm text-[#002147] hover:text-[#3a9970] "
                     >
